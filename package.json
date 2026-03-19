@@ -1,0 +1,11 @@
+{
+  "name": "benefits-ai-workspace",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "infra"
+  ],
+  "engines": {
+    "node": ">=24.0.0"
+  }
+}
