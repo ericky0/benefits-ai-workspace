@@ -28,6 +28,9 @@ Thumbs.db
 # Claude Code (local only)
 CLAUDE.local.md
 
+# Local docs (learning notes, not for repo)
+docs/
+
 # Logs
 *.log
 npm-debug.log*
