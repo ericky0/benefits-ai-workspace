@@ -29,7 +29,7 @@ Thumbs.db
 CLAUDE.local.md
 
 # Local docs (learning notes, not for repo)
-docs/
+docs/local/
 
 # Logs
 *.log

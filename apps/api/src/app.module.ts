@@ -1,6 +1,12 @@
-import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { AppController } from './app.controller';
+import { Module } from '@nestjs/common'
+import { TypeOrmModule } from '@nestjs/typeorm'
+import { AppController } from './app.controller'
+import { CompanyModule } from './company/company.module'
+import { EmployeeModule } from './employee/employee.module'
+import { PlanModule } from './plan/plan.module'
+import { CompanyPlanModule } from './company-plan/company-plan.module'
+import { EnrollmentModule } from './enrollment/enrollment.module'
+import { AuthModule } from './auth/auth.module'
 
 @Module({
   imports: [
@@ -14,6 +20,12 @@ import { AppController } from './app.controller';
       autoLoadEntities: true,
       synchronize: true,
     }),
+    CompanyModule,
+    EmployeeModule,
+    PlanModule,
+    CompanyPlanModule,
+    EnrollmentModule,
+    AuthModule,
   ],
   controllers: [AppController],
 })
