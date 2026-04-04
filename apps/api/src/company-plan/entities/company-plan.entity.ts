@@ -16,21 +16,19 @@ export class CompanyPlan {
   @PrimaryGeneratedColumn('uuid')
   id: string
 
-  @Column()
   companyId: string
 
-  @Column()
   planId: string
 
   @CreateDateColumn()
   createdAt: Date
 
   @ManyToOne(() => Company)
-  @JoinColumn({ name: 'companyId' })
+  @JoinColumn()
   company: Company
 
   @ManyToOne(() => Plan)
-  @JoinColumn({ name: 'planId' })
+  @JoinColumn()
   plan: Plan
 
   @OneToMany(() => Enrollment, (enrollment) => enrollment.companyPlan)

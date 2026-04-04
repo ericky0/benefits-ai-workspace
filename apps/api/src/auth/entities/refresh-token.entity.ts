@@ -13,7 +13,6 @@ export class RefreshToken {
   @PrimaryGeneratedColumn('uuid')
   id: string
 
-  @Column()
   employeeId: string
 
   @Column({ unique: true })
@@ -23,7 +22,7 @@ export class RefreshToken {
   expiresAt: Date
 
   @ManyToOne(() => Employee)
-  @JoinColumn({ name: 'employeeId' })
+  @JoinColumn()
   employee: Employee
 
   @CreateDateColumn()

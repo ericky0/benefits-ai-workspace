@@ -15,10 +15,8 @@ export class Enrollment {
   @PrimaryGeneratedColumn('uuid')
   id: string
 
-  @Column()
   employeeId: string
 
-  @Column()
   companyPlanId: string
 
   @Column({ type: 'enum', enum: ['pending', 'active', 'cancelled'] })
@@ -46,10 +44,10 @@ export class Enrollment {
   updatedAt: Date
 
   @ManyToOne(() => Employee)
-  @JoinColumn({ name: 'employeeId' })
+  @JoinColumn()
   employee: Employee
 
   @ManyToOne(() => CompanyPlan)
-  @JoinColumn({ name: 'companyPlanId' })
+  @JoinColumn()
   companyPlan: CompanyPlan
 }

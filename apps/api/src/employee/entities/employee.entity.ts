@@ -28,7 +28,6 @@ export class Employee {
   @Column({ type: 'enum', enum: ['company_admin', 'employee'] })
   role: string
 
-  @Column()
   companyId: string
 
   @CreateDateColumn()
@@ -38,7 +37,7 @@ export class Employee {
   updatedAt: Date
 
   @ManyToOne(() => Company)
-  @JoinColumn({ name: 'companyId' })
+  @JoinColumn()
   company: Company
 
   @OneToMany(() => Enrollment, (enrollment) => enrollment.employee)
