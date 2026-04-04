@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common'
 import { TypeOrmModule } from '@nestjs/typeorm'
+import { SnakeNamingStrategy } from 'typeorm-naming-strategies'
 import { AppController } from './app.controller'
 import { CompanyModule } from './company/company.module'
 import { EmployeeModule } from './employee/employee.module'
@@ -19,6 +20,7 @@ import { AuthModule } from './auth/auth.module'
       database: process.env.DB_DATABASE ?? 'benefits_ai',
       autoLoadEntities: true,
       synchronize: true,
+      namingStrategy: new SnakeNamingStrategy(),
     }),
     CompanyModule,
     EmployeeModule,
